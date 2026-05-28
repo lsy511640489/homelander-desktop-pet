@@ -1,0 +1,2 @@
+[console_scripts]
+homelander-pet = homelander_pet.main:main

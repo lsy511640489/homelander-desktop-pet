@@ -1,0 +1,32 @@
+{
+  "skills": [
+    {
+      "name": "system-control",
+      "enabled": false,
+      "entry": "skills/system-control"
+    },
+    {
+      "name": "a-share-xgboost-screen",
+      "enabled": true,
+      "entry": "skills/a-share-xgboost-screen"
+    },
+        {
+      "name": "advogado-criminal",
+      "enabled": true,
+      "entry": "skills/advogado-criminal"
+    },
+    {
+      "name": "skill-echo-test",
+      "enabled": true,
+      "entry": "skills/skill-echo-test"
+    }
+  ],
+  "mcp_servers": [
+    {
+      "name": "demo-echo",
+      "enabled": true,
+      "command": "python",
+      "args": ["mcp_server/mcp_echo_server.py"]
+    }
+  ]
+}

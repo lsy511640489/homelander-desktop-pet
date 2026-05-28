@@ -1,0 +1,111 @@
+{
+  "schema_version": "1.0",
+  "pet_id": "homelander",
+  "default_action": "idle",
+  "actions": [
+    {
+      "id": "idle",
+      "label": "待机",
+      "media": {
+        "type": "video",
+        "path": "assets/videos/actions/idle/idle_01.mov",
+        "loop": true
+      },
+      "desktop_ops": [
+        {"op": "none"}
+      ],
+      "triggers": ["startup", "timeout"]
+    },
+    {
+      "id": "mouse_move",
+      "label": "鼠标跟随",
+      "media": {
+        "type": "video",
+        "path": "assets/videos/actions/mouse_move/mouse_move_01.mov",
+        "loop": false
+      },
+      "desktop_ops": [
+        {"op": "move_mouse_to", "target": "cursor"}
+      ],
+      "triggers": ["mouse_move"]
+    },
+    {
+      "id": "click",
+      "label": "点击反馈",
+      "media": {
+        "type": "video",
+        "path": "assets/videos/actions/click/click_01.mov",
+        "loop": false
+      },
+      "desktop_ops": [
+        {"op": "click", "button": "left", "count": 1}
+      ],
+      "triggers": ["click"]
+    },
+    {
+      "id": "drag_start",
+      "label": "拖拽起手",
+      "media": {
+        "type": "video",
+        "path": "assets/videos/actions/drag_start/drag_start_01.mov",
+        "loop": false
+      },
+      "desktop_ops": [
+        {"op": "drag", "phase": "start"}
+      ],
+      "triggers": ["drag_start"]
+    },
+    {
+      "id": "drag_move",
+      "label": "拖拽移动",
+      "media": {
+        "type": "video",
+        "path": "assets/videos/actions/drag_move/drag_move_01.mov",
+        "loop": true
+      },
+      "desktop_ops": [
+        {"op": "drag", "phase": "move"}
+      ],
+      "triggers": ["drag_move"]
+    },
+    {
+      "id": "release",
+      "label": "松开",
+      "media": {
+        "type": "video",
+        "path": "assets/videos/actions/release/release_01.mov",
+        "loop": false
+      },
+      "desktop_ops": [
+        {"op": "release_mouse"}
+      ],
+      "triggers": ["mouse_up"]
+    },
+    {
+      "id": "think",
+      "label": "思考中",
+      "media": {
+        "type": "video",
+        "path": "assets/videos/actions/think/think_01.mov",
+        "loop": true
+      },
+      "desktop_ops": [
+        {"op": "none"}
+      ],
+      "triggers": ["llm_pending"]
+    },
+    {
+      "id": "answer",
+      "label": "回答",
+      "media": {
+        "type": "video",
+        "path": "assets/videos/actions/answer/answer_01.mov",
+        "loop": false
+      },
+      "desktop_ops": [
+        {"op": "none"}
+      ],
+      "triggers": ["llm_answer_ready"]
+    }
+  ]
+}

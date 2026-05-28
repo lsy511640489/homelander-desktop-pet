@@ -1,0 +1,82 @@
+Metadata-Version: 2.4
+Name: homelander-pet
+Version: 0.1.0
+Summary: Modular desktop pet framework with action-table driven media and tool integrations
+Author: lsy
+License: Proprietary
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+Requires-Dist: opencv-python>=4.10.0.84
+Requires-Dist: pillow>=10.4.0
+Provides-Extra: llm
+Requires-Dist: httpx>=0.27.0; extra == "llm"
+Provides-Extra: automation
+Provides-Extra: dev
+
+# Homelander Pet
+
+一个可扩展的自定义桌宠工程骨架，面向以下能力：
+
+- 数字形象视频资产按动作名组织
+- 动作表驱动桌面行为，例如点击、鼠标移动、拖拽、松开
+- DeepSeek 大模型问答
+- Skill / MCP 插件式扩展
+
+## 推荐架构
+
+```text
+homelander/
+  assets/
+    videos/
+      source/
+      actions/
+        idle/
+        click/
+        mouse_move/
+        drag_start/
+        drag_move/
+        release/
+        think/
+        answer/
+  config/
+    action-table.example.json
+    pet-profile.example.json
+    plugins.example.json
+  src/
+    homelander_pet/
+      adapters/
+      core/
+      models/
+      main.py
+  .env.example
+  pyproject.toml
+```
+
+## 设计原则
+
+1. 动作和媒体解耦，动作表只描述“做什么”和“用什么资源”。
+2. 桌面操作和数字形象分层，视频资源可以单独替换。
+3. DeepSeek、Skill、MCP 都放在 adapter 层，避免污染核心运行时。
+4. 所有动作都从统一 registry 读取，便于热更新和扩展。
+
+## 目录用途
+
+- `assets/videos/source/`：原始视频或原始导出资产。
+- `assets/videos/actions/<action_name>/`：按动作名分组的视频资源。
+- `config/action-table.example.json`：动作表示例。
+- `config/pet-profile.example.json`：桌宠基础配置。
+- `config/plugins.example.json`：Skill / MCP 插件配置示例。
+
+## 下一步接入点
+
+- 把真实视频文件放进 `assets/videos/actions/<action_name>/`。
+- 用 `config/action-table.example.json` 扩成正式动作表。
+- 在 `src/homelander_pet/adapters/deepseek.py` 接入 DeepSeek API。
+- 在 `src/homelander_pet/adapters/skill_bridge.py` 和 `mcp_bridge.py` 接入外部工具。
+
+## 运行方式
+
+1. 直接启动桌宠窗口：`uv run python -m homelander_pet.main`
+2. 如果你只想先看配置能否正常读取：`$env:HOMELANDER_PET_HEADLESS=1; uv run python -m homelander_pet.main`
+3. 后续接入真实视频后，再把 `assets/videos/actions/<action_name>/` 里的占位资源替换成你的 mp4。
+

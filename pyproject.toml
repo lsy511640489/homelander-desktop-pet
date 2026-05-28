@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "homelander-pet"
+version = "0.1.0"
+description = "Modular desktop pet framework with action-table driven media and tool integrations"
+readme = "README.md"
+requires-python = ">=3.11"
+license = {text = "GPL-3.0-only"}
+authors = [{name = "lsy"}]
+dependencies = ["opencv-python>=4.10.0.84", "pillow>=10.4.0"]
+
+[project.optional-dependencies]
+llm = ["httpx>=0.27.0"]
+automation = []
+dev = []
+
+[project.scripts]
+homelander-pet = "homelander_pet.main:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]

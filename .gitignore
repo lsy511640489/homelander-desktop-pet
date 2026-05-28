@@ -1,0 +1,10 @@
+.env
+assets/
+**/__pycache__/
+*.pyc
+pyarmor.bug.log
+examples/pack
+src/homelander_pet/__pycache__/main.cpython-314.pyc
+src/homelander_pet/adapters/__pycache__/deepseek.cpython-314.pyc
+mcpserver/pack
+agent_memory_data/

@@ -1,0 +1,15 @@
+{
+  "pet_id": "homelander",
+  "display_name": "Homelander",
+  "asset_root": "assets/videos",
+  "action_table": "config/action-table.example.json",
+  "avatar": {
+    "format": "video",
+    "default_action": "idle"
+  },
+  "llm": {
+    "provider": "deepseek",
+    "model": "deepseek-chat",
+    "base_url": "https://api.deepseek.com"
+  }
+}
