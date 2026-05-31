@@ -136,6 +136,9 @@ Skill 是这个工程里给大模型提供的“可调用能力”。它和 MCP 
 - `skill-echo-test`
   - 用途：最小测试 skill，用于验证 skill 链路
 
+## 环境配置
+1. winget install ffmpeg 通过该命令下载ffmpeg工具
+
 ## 运行方式
 
 1. 直接启动桌宠窗口：`uv run python -m homelander_pet.main`

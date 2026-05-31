@@ -1,3 +1,4 @@
+LICENSE
 README.md
 pyproject.toml
 src/homelander_pet/__init__.py
@@ -11,8 +12,17 @@ src/homelander_pet.egg-info/top_level.txt
 src/homelander_pet/adapters/__init__.py
 src/homelander_pet/adapters/deepseek.py
 src/homelander_pet/adapters/mcp_bridge.py
+src/homelander_pet/adapters/news_digest.py
 src/homelander_pet/adapters/skill_bridge.py
+src/homelander_pet/adapters/stock_tracker.py
 src/homelander_pet/adapters/tk_desktop.py
+src/homelander_pet/agent/__init__.py
+src/homelander_pet/agent/orchestrator.py
+src/homelander_pet/agent/agent_memory_lib/__init__.py
+src/homelander_pet/agent/agent_memory_lib/memory_core.py
+src/homelander_pet/agent/agent_memory_lib/memory_storage.py
+src/homelander_pet/chat/__init__.py
+src/homelander_pet/chat/window.py
 src/homelander_pet/core/__init__.py
 src/homelander_pet/core/action_registry.py
 src/homelander_pet/core/config.py
@@ -22,3 +32,4 @@ src/homelander_pet/core/runtime.py
 src/homelander_pet/models/__init__.py
 src/homelander_pet/models/action.py
 src/homelander_pet/models/pet_state.py
+tests/test_stock_tracker.py
